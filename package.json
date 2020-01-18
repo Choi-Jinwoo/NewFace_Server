@@ -1,0 +1,7 @@
+{
+  "name": "NewMeeting_Server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "choi jinwoo <chlwlsdn0828@gmail.com>",
+  "license": "MIT"
+}
