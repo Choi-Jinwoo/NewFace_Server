@@ -10,12 +10,15 @@ module.exports = async (req, res) => {
       memberId: member.id,
     });
 
-    for (let i = 0; i < body.files.length; i += 1) {
-      await models.PostFile.create({
-        postIdx: post.idx,
-        fileName: body.files[i],
-      });
+    if (body.files) {
+      for (let i = 0; i < body.files.length; i += 1) {
+        await models.PostFile.create({
+          postIdx: post.idx,
+          fileName: body.files[i],
+        });
+      }
     }
+
 
     return res.status(200).json({
       status: 200,

@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         id: body.id,
       },
     });
-
+    console.log(body);
     if (member) {
       console.log('이미 존재하는 회원');
       return res.status(409).json({

@@ -4,10 +4,10 @@ const getFileUrl = require('../../lib/method/getFileUrl');
 module.exports = async (req, res) => {
 
   try {
-    const posts = await models.Post.findAll({
+    let posts = await models.Post.findAll({
       raw: true,
     });
-
+    posts = posts.reverse();
     for (let i = 0; i < posts.length; i++) {
       const files = await models.PostFile.findAll({
         where: {
