@@ -1,9 +1,28 @@
 const models = require('../../models');
+const getFileUrl = require('../../lib/method/getFileUrl');
 
 module.exports = async (req, res) => {
 
   try {
-    const posts = await models.Post.findAll();
+    const posts = await models.Post.findAll({
+      raw: true,
+    });
+
+    for (let i = 0; i < posts.length; i++) {
+      const files = await models.PostFile.findAll({
+        where: {
+          postIdx: posts[i].idx,
+        },
+        raw: true,
+      });
+
+      posts[i].files = [];
+      for (let j = 0; j < files.length; j++) {
+        posts[i].files.push(getFileUrl(req, files[j].fileName));
+      }
+    }
+
+    console.log(posts);
 
     return res.status(200).json({
       status: 200,
