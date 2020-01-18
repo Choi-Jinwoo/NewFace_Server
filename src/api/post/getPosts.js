@@ -22,8 +22,6 @@ module.exports = async (req, res) => {
       }
     }
 
-    console.log(posts);
-
     return res.status(200).json({
       status: 200,
       message: '게시글 전체 조회 성공.',
