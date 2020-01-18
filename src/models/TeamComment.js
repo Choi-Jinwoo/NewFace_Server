@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {
-    tableName: 'team_commnet',
+    tableName: 'team_comment',
   });
 
   return TeamComment;

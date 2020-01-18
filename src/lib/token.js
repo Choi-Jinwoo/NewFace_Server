@@ -1,7 +1,5 @@
-require('dotenv').config();
 const jwt = require('jsonwebtoken');
-
-const { JWT_SECRET } = process.env;
+const JWT_SECRET = require('../../config/token.json').secret;
 
 exports.createToken = async (id) => {
   const payload = {
@@ -10,7 +8,7 @@ exports.createToken = async (id) => {
 
   const options = {
     expiresIn: '12h',
-    issuer: 'Bindalbe',
+    issuer: 'NewMeeting',
     subject: 'token',
   };
 

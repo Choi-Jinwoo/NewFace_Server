@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {
-    tableName: 'post_commnet',
+    tableName: 'post_comment',
   });
 
   return PostComment;
