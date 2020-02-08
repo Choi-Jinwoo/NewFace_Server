@@ -20,4 +20,4 @@
 
 ## 관련 글
 - [네이버 블로그](https://blog.naver.com/chlwlsdn0828/221779100715)
-- [ 코드](https://github.com/Choi-Jinwoo/NewFace_Web)
+- [웹 코드](https://github.com/Choi-Jinwoo/NewFace_Web)
